@@ -2305,7 +2305,6 @@ static int mmc_blk_rw_wait(struct mmc_queue *mq, struct request **prev_req)
 	int err = 0;
 
 	wait_event(mq->wait, mmc_blk_rw_wait_cond(mq, &err));
-
 	/* Always complete the previous request if there is one */
 	mmc_blk_mq_complete_prev_req(mq, prev_req);
 
