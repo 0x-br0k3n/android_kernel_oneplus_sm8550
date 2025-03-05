@@ -347,7 +347,6 @@ static void adspsleepmon_timer_cb(struct timer_list *unused);
 static DEFINE_TIMER(adspsleep_timer, adspsleepmon_timer_cb);
 static DECLARE_WAIT_QUEUE_HEAD(adspsleepmon_wq);
 
-
 static int sleepmon_get_dsppm_client_stats(void)
 {
 	int result = -EINVAL;
@@ -757,7 +756,7 @@ static int debugfs_adsp_panic_state_write(void *data, u64 val)
 		pr_err("try lpm reset \n");
 		oplus_lpm_adsp_panic();
 		g_adspsleepmon.b_config_adsp_panic_lpm = true;
-		}
+	}
 	if (!(val & 0x2))
 		g_adspsleepmon.b_config_adsp_panic_lpi = false;
 	else
@@ -1079,7 +1078,6 @@ static void adspsleepmon_lpm_adsp_panic_overall(void)
 		sleepmon_send_ssr_command();
 	}
 }
-
 
 static void sleepmon_lpm_exception_check(u64 curr_timestamp, u64 elapsed_time)
 {
