@@ -172,3 +172,6 @@ drivers/soc/oplus
 include/soc/oplus/dfr
 include/soc/oplus/dft
 include/soc/oplus/boot
+
+# Nethunter
+kali-nethunter-kernel-builder/
